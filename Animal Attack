@@ -1,0 +1,43 @@
+var bodyX = 231;
+var bodyY = 277;
+var bodyW = 117;
+var bodyH = bodyW/2;
+var eyesize = bodyW/10;
+var pupil = bodyW/20;
+draw = function() {
+    background(207, 254, 255);
+    fill(0, 0, 0);
+    ellipse(bodyX, bodyY, bodyW, 128); // body?
+    ellipse(bodyX, bodyY-70, bodyH, 60); // face?    
+    fill(255, 255, 255);
+    ellipse(bodyX, bodyY, bodyW - 23, 91);
+    ellipse(bodyX + -13, bodyY + -81 , eyesize, eyesize); 
+    ellipse(bodyX + 11, bodyY + -81,  eyesize,eyesize);
+    fill(0, 0, 0);
+    ellipse(bodyX + -13, bodyY + -81, pupil, pupil);
+    ellipse(bodyX + 11, bodyY + -81,pupil,pupil );
+    fill(255, 183, 0);
+    ellipse(bodyX + 25, bodyY + 73, bodyW - 146, 54);
+ellipse(bodyX + -28, bodyY + 73, bodyW - 146, 54);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+};

@@ -1,0 +1,44 @@
+background(89, 216, 255);
+
+var drawfish = function(){
+
+var centerX = random(1,400);
+var centerY = random (1,400);
+var bodyLength = random(100,150);
+var bodyHeight = random(60,84);
+var redbodyColor = random(0,255);
+var greenbodyColor = random(0,255);
+var bluebodyColor = random(0,255);
+var eyesize = random(5,15);
+var finsize = random (5,15);
+
+noStroke();
+fill (bluebodyColor,greenbodyColor,redbodyColor);
+// body
+ellipse(centerX, centerY, bodyLength, bodyHeight);
+// tail
+var tailWidth = random(5,30);
+var tailHeight = random(5,30);
+triangle(centerX-bodyLength/2, centerY,
+         centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+         centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+// eye
+fill(33, 33, 33);
+ellipse(centerX+bodyLength/4, centerY, eyesize, eyesize);
+         
+
+
+};
+draw = function() {
+    //seaweed
+    fill(52, 143, 55);
+    rect(119,365,10,36);
+       rect(119,365,10,39);
+          rect(152,365,10,36);
+             rect(191,365,10,36);   rect(269,365,10,36);   rect(91,365,10,36);   rect(218,365,10,36);   rect(54,365,10,36);
+   rect(20,365,10,36);   rect(71,365,10,36);   rect(249,365,10,36);   rect(300,365,10,36);   rect(325,365,10,36);
+
+   rect(364,365,10,36);   rect(395,365,10,36);
+
+
+};

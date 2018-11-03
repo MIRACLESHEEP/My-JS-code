@@ -1,8 +1,11 @@
+// added bad sticks that take away from your score
+
 var Beaver = function(x, y) {
     this.x = x;
     this.y = y;
     this.img = getImage("creatures/Hopper-Happy");
     this.sticks = 0;
+     this.badsticks = 0;
 };
 
 Beaver.prototype.draw = function() {
@@ -67,6 +70,8 @@ for (var b = 0; b < 40; b++) {
 var sticks = [];
 for (var i = 0; i < 40; i++) {  
     sticks.push(new Stick(i * 40 + 300, random(20, 260)));
+
+
 }
 
 var grassXs = [];
@@ -97,22 +102,22 @@ draw = function() {
     }
      for (var i = 0; i < badsticks.length; i++) {
         badsticks[i].draw();
-        beaver.checkForStickGrab(sticks[i]);
+        beaver.checkForbadStickGrab(badsticks[i]);
         badsticks[i].x -= 1;
     }
     
     textSize(18);
-    text("Score: " + beaver.sticks, 20, 30);
+    text("Score: " + (beaver.sticks - beaver.badsticks) , 20, 30);
     
+   
     if (beaver.sticks/sticks.length >= 0.95) {
         textSize(36);
         text("YOU WIN!!!!", 100, 200);
     }
     
-     if (beaver.badsticks/badsticks.length >= 0.95) {
-        textSize(36);
-        text("loser!!!!", 100, 200);
-    }
+
+
+     
     
     if (keyIsPressed && keyCode === 0) {
         beaver.hop();
@@ -122,3 +127,4 @@ draw = function() {
     beaver.draw();
 };
 
+ 
